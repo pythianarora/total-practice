@@ -1,0 +1,4 @@
+**/vendor
+**/settings.yml
+build/*
+config/settings-e2e.yml
