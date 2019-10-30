@@ -9,3 +9,6 @@ $creds = New-Object System.Management.Automation.PSCredential ("arora", ("76492d
 $size = 'Standard_D1'
 $imagename = 'Win2016Datacenter'
 New-AzVM -ResourceGroupName $resourcegroupname -Name $vmname -Size $size -Image $imagename -VirtualNetworkName $networkname -SubnetName $subnetname -SecurityGroupName $nsgname -PublicIpAddressName $publicip -Credential $creds
+
+#Stop-AzVM -Name instance-1 -ResourceGroupName rg1
+#Start-AzVM -Name instance-1 -ResourceGroupName rg1
