@@ -2,10 +2,10 @@ version: '3'
 
 services:
   db1:
-    container_name: sql2k17node01
+    container_name: sql2k17node1
     image: sandeeparora/sql2k17-ag-node:latest
     hostname:
-        sqlNode1
+        sql2k17node1
     domainname:
         training.com
     volumes:
@@ -17,10 +17,10 @@ services:
       - internal
 
   db2:
-    container_name: sql2k17node02
+    container_name: sql2k17node2
     image: sandeeparora/sql2k17-ag-node:latest
     hostname:
-        sqlNode2
+        sql2k17node2
     domainname:
         training.com
     volumes:
