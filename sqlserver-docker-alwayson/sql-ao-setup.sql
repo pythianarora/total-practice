@@ -1,20 +1,25 @@
 USE master
 GO
-CREATE LOGIN dbm_login WITH PASSWORD = 'P@ssw0rd';
+CREATE LOGIN ag_login WITH PASSWORD = 'P@ssw0rd'
 GO
-CREATE USER dbm_user FOR LOGIN dbm_login;
+CREATE USER ag_user FOR LOGIN ag_login;
 GO
-CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'P@ssw0rd';
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'P@ssw0rd'
 GO
-CREATE CERTIFICATE dbm_certificate WITH SUBJECT = 'dbm';
+CREATE CERTIFICATE ag_certificate   
+    AUTHORIZATION ag_user
+    FROM FILE = '/usr/work/ag_certificate_cer'
+    WITH PRIVATE KEY (
+    FILE = '/usr/work/ag_certificate_pvk',
+    DECRYPTION BY PASSWORD = 'P@ssw0rd'
+)
 GO
 CREATE ENDPOINT [Hadr_endpoint]
 AS TCP (LISTENER_IP = ALL, LISTENER_PORT = 5022)
-FOR DATA_MIRRORING (
-ROLE = ALL, AUTHENTICATION = CERTIFICATE dbm_certificate,
+FOR DATA_MIRRORING (ROLE = ALL, AUTHENTICATION = CERTIFICATE ag_certificate,
 ENCRYPTION = REQUIRED ALGORITHM AES);
 GO
 ALTER ENDPOINT [Hadr_endpoint] STATE = STARTED;
 GO
-GRANT CONNECT ON ENDPOINT::[Hadr_endpoint] TO [dbm_login]
+GRANT CONNECT ON ENDPOINT::[Hadr_endpoint] TO [ag_login]
 GO
