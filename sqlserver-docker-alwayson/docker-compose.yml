@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  db1:
+    container_name: sql2k17node01
+    image: sandeeparora/sql2017_alwayson_node:latest
+    hostname:
+        sql2k17node01
+    domainname:
+        training.com
+    volumes:
+      - mssql-server-linux-datadb1:/var/opt/mssql/data/
+    ports:
+      - "1433:1433"
+    networks:
+      - internal
+
+  db2:
+    container_name: sql2k17node02
+    image: sandeeparora/sql2017_alwayson_node:latest
+    hostname:
+        sql2k17node02
+    domainname:
+        training.com
+    volumes:
+      - mssql-server-linux-datadb2:/var/opt/mssql/data/
+    ports:
+      - "1434:1433"
+    networks:
+      - internal
+
+volumes:
+  mssql-server-linux-datadb1:
+  mssql-server-linux-datadb2:
+  
+networks:
+  internal:
