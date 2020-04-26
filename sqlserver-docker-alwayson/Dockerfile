@@ -7,14 +7,14 @@ ENV ACCEPT_EULA=Y
 ENV MSSQL_SA_PASSWORD="P@ssw0rd"
 ENV MSSQL_PID=Developer
 
-# Certificate previously generated (see Readme.md)
-ENV CERTFILE "./dbm_certificate_cer"
-ENV CERTFILE_PWD "./dbm_certificate_pvk"
+# Create work directory
+RUN mkdir -p /usr/work
+WORKDIR /usr/work
+# Copy all scripts into working directory
+COPY . /usr/work/
 
-RUN mkdir /usr/certificate
-WORKDIR /usr/
-COPY ${CERTFILE} ./certificate
-COPY ${CERTFILE_PWD} ./certificate
+# Grant permissions for the import-data script to be executable
+RUN chmod +x /usr/work/sql-ao-settings.sh
 
 # Enable SQL Server Agent
 RUN /opt/mssql/bin/mssql-conf set sqlagent.enabled true
@@ -23,4 +23,4 @@ RUN /opt/mssql/bin/mssql-conf set sqlagent.enabled true
 RUN /opt/mssql/bin/mssql-conf set hadr.hadrenabled 1
 
 # Run SQL Server process.
-CMD /opt/mssql/bin/sqlservr
+CMD /bin/bash ./entrypoint.sh

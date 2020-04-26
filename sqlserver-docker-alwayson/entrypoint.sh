@@ -1,0 +1,1 @@
+/usr/work/sql-ao-settings.sh & /opt/mssql/bin/sqlservr
