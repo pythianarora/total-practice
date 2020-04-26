@@ -14,7 +14,7 @@ docker pull sandeeparora/sql2k17-ag-node
 docker-compose up -d
 ```
 
-_Now, you have a 2 node (sql2k17node1 and sql2k17node2) sharing the network and prepared to be part of a new availability group.
+Now, you have a 2 nodes (sql2k17node1 and sql2k17node2) sharing the network and prepared to be part of a new availability group.
 
 3. Connect to sql2k17node1 on port 1433 (exposed on the host) and create the availability group using SSMS. 
 
