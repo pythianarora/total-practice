@@ -3,9 +3,7 @@ version: '3'
 services:
   db1:
     container_name: sql2k17node01
-    image: sandeeparora/sql2017_alwayson_node:latest
-    hostname:
-        sql2k17node01
+    image: sandeeparora/sql2k17-ao-node:latest
     domainname:
         training.com
     volumes:
@@ -17,9 +15,7 @@ services:
 
   db2:
     container_name: sql2k17node02
-    image: sandeeparora/sql2017_alwayson_node:latest
-    hostname:
-        sql2k17node02
+    image: sandeeparora/sql2k17-ao-node:latest
     domainname:
         training.com
     volumes:
