@@ -19,4 +19,3 @@ Now, you have a 2 nodes (sql2k17node1 and sql2k17node2) sharing the network and 
 3. Connect to sql2k17node1 on port 1433 (exposed on the host) and create the availability group using SSMS. 
 
 4. Connect to sql2k17node2 on port 1434 (exposed on the host) and add it to the availability group created in step 3.
-
