@@ -4,24 +4,30 @@ services:
   db1:
     container_name: sql2k17node01
     image: sandeeparora/sql2k17-ao-node:latest
+    hostname:
+        sqlNode1
     domainname:
         training.com
     volumes:
       - mssql-server-linux-datadb1:/var/opt/mssql/data/
     ports:
       - "1433:1433"
+      - "50222:5022"
     networks:
       - internal
 
   db2:
     container_name: sql2k17node02
     image: sandeeparora/sql2k17-ao-node:latest
+    hostname:
+        sqlNode2
     domainname:
         training.com
     volumes:
       - mssql-server-linux-datadb2:/var/opt/mssql/data/
     ports:
       - "1434:1433"
+      - "50223:5022"
     networks:
       - internal
 

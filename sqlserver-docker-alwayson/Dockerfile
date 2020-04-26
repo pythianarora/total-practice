@@ -4,7 +4,7 @@ EXPOSE 1433
 EXPOSE 5022
 
 ENV ACCEPT_EULA=Y
-ENV MSSQL_SA_PASSWORD="p@ssw0rd"
+ENV MSSQL_SA_PASSWORD="P@ssw0rd"
 ENV MSSQL_PID=Developer
 
 # Certificate previously generated (see Readme.md)
@@ -13,7 +13,6 @@ ENV CERTFILE_PWD "./dbm_certificate_pvk"
 
 RUN mkdir /usr/certificate
 WORKDIR /usr/
-COPY ${CERTFILE} ./certificate
 COPY ${CERTFILE} ./certificate
 COPY ${CERTFILE_PWD} ./certificate
 
