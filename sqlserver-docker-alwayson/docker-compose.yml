@@ -10,7 +10,7 @@ services:
       - "1433:1433"
       - "50222:5022"
     networks:
-      - internal
+    internal:
         aliases:
           - sql2k17node1.training.internal  
 
@@ -25,9 +25,9 @@ services:
       - "1434:1433"
       - "50223:5022"
     networks:
-      - internal
+    internal:
         aliases:
-          - sql2k17node1.training.internal
+          - sql2k17node2.training.internal  
         
 volumes:
   mssql-server-linux-datadb1:
