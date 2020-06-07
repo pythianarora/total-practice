@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters: 
+  BucketName:
+    Description: Bucket Names are unique and start with a lowercase or a number.
+    Type: String
+Resources:
+  YourBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Ref BucketName
+  YourBucket2:
+    Type: 'AWS::S3::Bucket'
