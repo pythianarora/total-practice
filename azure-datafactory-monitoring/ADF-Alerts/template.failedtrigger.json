@@ -66,7 +66,7 @@
         {
             "type": "Microsoft.Insights/metricAlerts",
             "apiVersion": "2018-03-01",
-            "name": "whenadfpipelinefailed",
+            "name": "alertwhenadftriggerfailed",
             "location": "global",
             "properties": {
                 "actions": [
@@ -80,7 +80,7 @@
 				{
 					"criterionType": "StaticThresholdCriterion",
 					"dimensions": [],
-					"metricName": "PipelineFailedRuns",
+					"metricName": "TriggerFailedRuns",
 					"metricNamespace": "Microsoft.DataFactory/factories",
 					"name": "Metric1",
 					"operator": "GreaterThan",
@@ -90,7 +90,7 @@
 			],
 			"odata.type": "Microsoft.Azure.Monitor.SingleResourceMultipleMetricCriteria"
 		    },
-		    "description": "send alert when adf pipeline is failed",
+		    "description": "send alert when adf trigger fails",
 		    "enabled": "[parameters('enableAlert')]",
 		    "evaluationFrequency": "PT1M",
 		    "scopes": ["[resourceId('Microsoft.DataFactory/factories',parameters('dataFactoryName'))]"],
