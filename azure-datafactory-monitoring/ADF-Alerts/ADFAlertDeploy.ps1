@@ -1,3 +1,5 @@
+Add-AzureRmAccount
+Import-Module AzureRM
 $resource_group_name = "<<Enter the Resource Group Name to create the deployment>>"
 $location = "<<Enter Azure Location>>"
 $deployment_time = Get-Date -Format yyyyMMddHHmmss
