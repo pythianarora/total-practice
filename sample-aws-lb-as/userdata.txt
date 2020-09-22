@@ -1,0 +1,16 @@
+#!/bin/bash
+sudo amazon-linux-extras install epel -y
+sudo yum install -y httpd php git stress
+git clone https://github.com/pythianarora/total-practice.git
+cd total-practice/sample-aws-lb-as/
+cp God_of_War.jpg horizon-zero-dawn.jpg index.php Uncharted.jpg /var/www/html/
+
+cd /var/www/html
+mv /var/www/html/htaccess /var/www/html/.htaccess
+
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo usermod -a -G apache ec2-user
+sudo chown -R ec2-user:apache /var/www
+sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
+find /var/www -type f -exec sudo chmod 0664 {} \;
