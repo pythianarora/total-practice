@@ -1,0 +1,104 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "dataFactoryName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the data factory. Name must be globally unique"
+            }
+        },
+        "actionGroupName": {
+            "type": "string",
+            "metadata": {
+                "description": "Action group name. Must be unique within the resource group"
+            }
+        },
+        "actionGroupShortName": {
+            "type": "string",
+            "maxLength": 12,
+            "metadata": {
+                "description": "Short name for the Action group"
+            }
+        },
+        "emailReceivers": {
+            "type": "array",
+            "metadata": {
+                "description": "List of email receiver name and email address"
+            }
+        },
+        "enableAlert": {
+            "type": "bool",
+            "defaultValue": true,
+            "metadata": {
+                "description": "true or false boolean value for enable/disable alert "
+            }
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Insights/actionGroups",
+            "apiVersion": "2018-03-01",
+            "name": "[parameters('actionGroupName')]",
+            "location": "global",
+            "properties": {
+                "emailReceivers": "[parameters('emailReceivers')]",
+                "smsReceivers": [],
+                "webhookReceivers": [],
+                "groupShortName": "[parameters('actionGroupShortName')]",
+                "enabled": true
+            }
+        },
+        {
+            "type": "Microsoft.DataFactory/factories",
+            "apiVersion": "2018-06-01",
+            "name": "[parameters('dataFactoryName')]",
+            "location": "[resourceGroup().location]",
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {},
+            "dependsOn": ["[resourceId('Microsoft.Insights/actionGroups',parameters('actionGroupName'))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Insights/metricAlerts",
+            "apiVersion": "2018-03-01",
+            "name": "whenadfpipelinefailed",
+            "location": "global",
+            "properties": {
+                "actions": [
+                    {
+                        "actionGroupId": "[resourceId('Microsoft.Insights/actionGroups',parameters('actionGroupName'))]"
+                    }
+                ],
+            "autoMitigate": true,
+            "criteria": {
+			"allOf": [
+				{
+					"criterionType": "StaticThresholdCriterion",
+					"dimensions": [],
+					"metricName": "PipelineFailedRuns",
+					"metricNamespace": "Microsoft.DataFactory/factories",
+					"name": "Metric1",
+					"operator": "GreaterThan",
+					"threshold": 1,
+					"timeAggregation": "Total"
+				}
+			],
+			"odata.type": "Microsoft.Azure.Monitor.SingleResourceMultipleMetricCriteria"
+		    },
+		    "description": "send alert when adf pipeline is failed",
+		    "enabled": "[parameters('enableAlert')]",
+		    "evaluationFrequency": "PT1M",
+		    "scopes": ["[resourceId('Microsoft.DataFactory/factories',parameters('dataFactoryName'))]"],
+		    "severity": 4,
+		    "targetResourceType": "Microsoft.DataFactory/factories",
+		    "windowSize": "PT1M"
+	        },
+            "dependsOn": ["[resourceId('Microsoft.DataFactory/factories',parameters('dataFactoryName'))]"]
+        }
+    ]
+}
