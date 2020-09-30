@@ -1,0 +1,397 @@
+{
+  "properties": {
+    "lenses": {
+      "0": {
+        "order": 0,
+        "parts": {
+          "0": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "colSpan": 6,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "options",
+                  "isOptional": true
+                },
+                {
+                  "name": "sharedTimeRange",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+              "settings": {
+                "content": {
+                  "options": {
+                    "chart": {
+                      "metrics": [
+                        {
+                          "resourceMetadata": {
+                            "id": "/subscriptions/<<Subscription ID>>/resourceGroups/<<Resource Group Name>>/providers/Microsoft.DataFactory/factories/<<Data Factory Name>>"
+                          },
+                          "name": "IntegrationRuntimeCpuPercentage",
+                          "aggregationType": 4,
+                          "namespace": "microsoft.datafactory/factories",
+                          "metricVisualization": {
+                            "displayName": "Integration runtime CPU utilization",
+                            "resourceDisplayName": "<<Data Factory Name>>"
+                          }
+                        }
+                      ],
+                      "title": "Avg Integration runtime CPU utilization for <<Data Factory Name>>",
+                      "titleKind": 1,
+                      "visualization": {
+                        "chartType": 2,
+                        "legendVisualization": {
+                          "isVisible": true,
+                          "position": 2,
+                          "hideSubtitle": false
+                        },
+                        "axisVisualization": {
+                          "x": {
+                            "isVisible": true,
+                            "axisType": 2
+                          },
+                          "y": {
+                            "isVisible": true,
+                            "axisType": 1
+                          }
+                        },
+                        "disablePinning": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "1": {
+            "position": {
+              "x": 6,
+              "y": 0,
+              "colSpan": 6,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "options",
+                  "isOptional": true
+                },
+                {
+                  "name": "sharedTimeRange",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+              "settings": {
+                "content": {
+                  "options": {
+                    "chart": {
+                      "metrics": [
+                        {
+                          "resourceMetadata": {
+                            "id": "/subscriptions/<<Subscription ID>>/resourceGroups/<<Resource Group Name>>/providers/Microsoft.DataFactory/factories/<<Data Factory Name>>"
+                          },
+                          "name": "IntegrationRuntimeAvailableMemory",
+                          "aggregationType": 4,
+                          "namespace": "microsoft.datafactory/factories",
+                          "metricVisualization": {
+                            "displayName": "Integration runtime available memory",
+                            "resourceDisplayName": "<<Data Factory Name>>"
+                          }
+                        }
+                      ],
+                      "title": "Avg Integration runtime available memory for <<Data Factory Name>>",
+                      "titleKind": 1,
+                      "visualization": {
+                        "chartType": 2,
+                        "legendVisualization": {
+                          "isVisible": true,
+                          "position": 2,
+                          "hideSubtitle": false
+                        },
+                        "axisVisualization": {
+                          "x": {
+                            "isVisible": true,
+                            "axisType": 2
+                          },
+                          "y": {
+                            "isVisible": true,
+                            "axisType": 1
+                          }
+                        },
+                        "disablePinning": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "2": {
+            "position": {
+              "x": 12,
+              "y": 0,
+              "colSpan": 6,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "options",
+                  "isOptional": true
+                },
+                {
+                  "name": "sharedTimeRange",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+              "settings": {
+                "content": {
+                  "options": {
+                    "chart": {
+                      "metrics": [
+                        {
+                          "resourceMetadata": {
+                            "id": "/subscriptions/<<Subscription ID>>/resourceGroups/<<Resource Group Name>>/providers/Microsoft.DataFactory/factories/<<Data Factory Name>>"
+                          },
+                          "name": "IntegrationRuntimeAvailableNodeNumber",
+                          "aggregationType": 4,
+                          "namespace": "microsoft.datafactory/factories",
+                          "metricVisualization": {
+                            "displayName": "Integration runtime available node count",
+                            "resourceDisplayName": "<<Data Factory Name>>"
+                          }
+                        }
+                      ],
+                      "title": "Avg Integration runtime available node count for <<Data Factory Name>>",
+                      "titleKind": 1,
+                      "visualization": {
+                        "chartType": 2,
+                        "legendVisualization": {
+                          "isVisible": true,
+                          "position": 2,
+                          "hideSubtitle": false
+                        },
+                        "axisVisualization": {
+                          "x": {
+                            "isVisible": true,
+                            "axisType": 2
+                          },
+                          "y": {
+                            "isVisible": true,
+                            "axisType": 1
+                          }
+                        },
+                        "disablePinning": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "3": {
+            "position": {
+              "x": 0,
+              "y": 4,
+              "colSpan": 6,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "options",
+                  "isOptional": true
+                },
+                {
+                  "name": "sharedTimeRange",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+              "settings": {
+                "content": {
+                  "options": {
+                    "chart": {
+                      "metrics": [
+                        {
+                          "resourceMetadata": {
+                            "id": "/subscriptions/<<Subscription ID>>/resourceGroups/<<Resource Group Name>>/providers/Microsoft.DataFactory/factories/<<Data Factory Name>>"
+                          },
+                          "name": "IntegrationRuntimeQueueLength",
+                          "aggregationType": 4,
+                          "namespace": "microsoft.datafactory/factories",
+                          "metricVisualization": {
+                            "displayName": "Integration runtime queue length",
+                            "resourceDisplayName": "<<Data Factory Name>>"
+                          }
+                        }
+                      ],
+                      "title": "Avg Integration runtime queue length for <<Data Factory Name>>",
+                      "titleKind": 1,
+                      "visualization": {
+                        "chartType": 2,
+                        "legendVisualization": {
+                          "isVisible": true,
+                          "position": 2,
+                          "hideSubtitle": false
+                        },
+                        "axisVisualization": {
+                          "x": {
+                            "isVisible": true,
+                            "axisType": 2
+                          },
+                          "y": {
+                            "isVisible": true,
+                            "axisType": 1
+                          }
+                        },
+                        "disablePinning": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4": {
+            "position": {
+              "x": 6,
+              "y": 4,
+              "colSpan": 6,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "options",
+                  "isOptional": true
+                },
+                {
+                  "name": "sharedTimeRange",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+              "settings": {
+                "content": {
+                  "options": {
+                    "chart": {
+                      "metrics": [
+                        {
+                          "resourceMetadata": {
+                            "id": "/subscriptions/<<Subscription ID>>/resourceGroups/<<Resource Group Name>>/providers/Microsoft.DataFactory/factories/<<Data Factory Name>>"
+                          },
+                          "name": "IntegrationRuntimeAverageTaskPickupDelay",
+                          "aggregationType": 4,
+                          "namespace": "microsoft.datafactory/factories",
+                          "metricVisualization": {
+                            "displayName": "Integration runtime queue duration",
+                            "resourceDisplayName": "<<Data Factory Name>>"
+                          }
+                        }
+                      ],
+                      "title": "Avg Integration runtime queue duration for <<Data Factory Name>>",
+                      "titleKind": 1,
+                      "visualization": {
+                        "chartType": 2,
+                        "legendVisualization": {
+                          "isVisible": true,
+                          "position": 2,
+                          "hideSubtitle": false
+                        },
+                        "axisVisualization": {
+                          "x": {
+                            "isVisible": true,
+                            "axisType": 2
+                          },
+                          "y": {
+                            "isVisible": true,
+                            "axisType": 1
+                          }
+                        },
+                        "disablePinning": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "5": {
+            "position": {
+              "x": 12,
+              "y": 4,
+              "colSpan": 2,
+              "rowSpan": 2
+            },
+            "metadata": {
+              "inputs": [],
+              "type": "Extension/HubsExtension/PartType/ClockPart",
+              "settings": {
+                "content": {
+                  "settings": {
+                    "timezoneId": "India Standard Time",
+                    "timeFormat": "HH:mm",
+                    "version": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "model": {
+        "timeRange": {
+          "value": {
+            "relative": {
+              "duration": 24,
+              "timeUnit": 1
+            }
+          },
+          "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+        },
+        "filterLocale": {
+          "value": "en-us"
+        },
+        "filters": {
+          "value": {
+            "MsPortalFx_TimeRange": {
+              "model": {
+                "format": "utc",
+                "granularity": "auto",
+                "relative": "24h"
+              },
+              "displayCache": {
+                "name": "UTC Time",
+                "value": "Past 24 hours"
+              },
+              "filteredPartIds": [
+                "StartboardPart-MonitorChartPart-6cbac9d9-1eb1-422d-8260-377aea2d44d9",
+                "StartboardPart-MonitorChartPart-6cbac9d9-1eb1-422d-8260-377aea2d4636",
+                "StartboardPart-MonitorChartPart-6cbac9d9-1eb1-422d-8260-377aea2d4642",
+                "StartboardPart-MonitorChartPart-6cbac9d9-1eb1-422d-8260-377aea2d464e",
+                "StartboardPart-MonitorChartPart-6cbac9d9-1eb1-422d-8260-377aea2d492c"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "Data Factories Dashboard",
+  "type": "Microsoft.Portal/dashboards",
+  "location": "INSERT LOCATION",
+  "tags": {
+    "hidden-title": "ADF Dashboard - <<Data Factory Name>>"
+  },
+  "apiVersion": "2015-08-01-preview"
+}
