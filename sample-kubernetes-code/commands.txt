@@ -1,0 +1,6 @@
+#Check Node Taints
+kubectl get nodes -o=custom-columns=NodeName:.metadata.name,TaintKey:.spec.taints[*].key,TaintValue:.spec.taints[*].value,TaintEffect:.spec.taints[*].effect
+#Create Alias for Node Taints
+alias getnodetaints="kubectl get nodes -o=custom-columns=NodeName:.metadata.name,TaintKey:.spec.taints[*].key,TaintValue:.spec.taints[*].value,TaintEffect:.spec.taints[*].effect"
+$Get Labels for Nodes
+kubectl get nodes --show-labels
