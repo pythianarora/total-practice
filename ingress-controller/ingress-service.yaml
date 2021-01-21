@@ -4,12 +4,16 @@ metadata:
   name: ingress
   namespace: ingress-space
 spec:
-  type: NodePort
+  type: LoadBalancer
+  externalIPs:
+  - 
+  - 
+  - 
+  externalTrafficPolicy: Local
   ports:
   - port: 80
     targetPort: 80
     protocol: TCP
-    nodePort: 30080
     name: http
   - port: 443
     targetPort: 443
