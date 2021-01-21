@@ -3,18 +3,21 @@ kind: Deployment
 metadata:
   name: default-backend
   namespace: app-space
+  labels:
+    app: default-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: default-backend
   template:
+    metadata:
       labels:
         app: default-backend
     spec:
       containers:
-      - image: nginx
-        name: nginx
+      - name: nginx
+        image: nginx
         ports:
         - containerPort: 8080
-          protocol: TCP
+		  protocol: TCP
