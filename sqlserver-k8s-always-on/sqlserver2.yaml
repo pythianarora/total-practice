@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sqlserver2
+  name: sqlserver2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sqlserver2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sqlserver2
+    spec:
+      volumes:
+        - name: mssql-server-linux-datadb2
+          persistentVolumeClaim:
+            claimName: sql-store-2
+      containers:
+        - image: sandeeparora/sql2k17-ag-node
+          name: sql2k17-ag-node
+          volumeMounts:
+            - mountPath: "/var/opt/mssql/data/"
+              name: mssql-server-linux-datadb2
+
