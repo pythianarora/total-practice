@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: easy-mess-1
+spec:
+  containers:
+  - command:
+    - sh
+    - -c
+    - echo Hello World! && sleep 1000
+    image: busybox:1.28
+    name: busybox-container
+  initContainers:
+  - command:
+    - sh
+    - -c
+    - slleep 2;
+    image: busybox:1.28
+    name: init-busybox-container
