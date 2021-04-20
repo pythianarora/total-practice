@@ -16,3 +16,4 @@ foreach ($adapter in $adapters) {
     $adapter.SetDNSServerSearchOrder($dnsServers)
     $adapter.SetGateways($defaultGateway)
 } 
+Install-WindowsFeature -Name Failover-Clustering -IncludeManagementTools;
