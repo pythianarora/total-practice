@@ -3,7 +3,7 @@
 )
 Set-ExecutionPolicy Bypass -Scope Process -Force
 #Get All the adapters that are on the Server
-$adapters = gwmi -cl win32_networkadapterconfiguration | ? {($_.ipaddress) -and $_.dhcpEnabled -eq 'True' } 
+$adapters = gwmi -cl win32_networkadapterconfiguration | Where-Object {($_.ipaddress) -and $_.dhcpEnabled -eq 'True' } 
 foreach ($adapter in $adapters) {
     # Get original settings
     $ipAddress = $adapter.IPAddress[0]
