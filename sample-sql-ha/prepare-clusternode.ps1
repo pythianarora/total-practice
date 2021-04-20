@@ -16,6 +16,6 @@ foreach ($adapter in $adapters) {
     $adapter.SetDNSServerSearchOrder($dnsServers)
     $adapter.SetGateways($defaultGateway)
 } 
-Install-WindowsFeature -Name Failover-Clustering -IncludeManagementTools;
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False 
+Install-WindowsFeature -Name Failover-Clustering -IncludeManagementTools
 Restart-Computer
