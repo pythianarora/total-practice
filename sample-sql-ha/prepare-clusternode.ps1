@@ -18,4 +18,10 @@ foreach ($adapter in $adapters) {
 } 
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False 
 Install-WindowsFeature -Name Failover-Clustering -IncludeManagementTools
+Set-Service SQLSERVERAGENT -StartupType Automatic
+Get-Service -Name SQLSERVERAGENT | Start-Service
+Set-Service MSSQLServerOLAPService -StartupType Disabled
+Set-Service SSASTELEMETRY -StartupType Disabled
+Set-Service SQLTELEMETRY -StartupType Disabled
+Set-Service SSISTELEMETRY150 -StartupType Disabled
 Restart-Computer
